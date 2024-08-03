@@ -1,4 +1,7 @@
+mod audio;
+
 fn main() {
+    let _ = audio::play_file("audio/lyutyy-negr-oret.mp3");
     MainWindow::new().unwrap().run().unwrap();
 }
 
