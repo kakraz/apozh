@@ -1,7 +1,7 @@
 use std::{fs::File, io::BufReader};
 use rodio::{Decoder, OutputStream, OutputStreamHandle, Sink};
 
-pub struct OutputAudioStream {
+struct OutputAudioStream {
     _output_stream: OutputStream,
     output_stream_handle: OutputStreamHandle,
 }
