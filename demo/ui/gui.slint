@@ -1,9 +1,11 @@
-import { Button } from "std-widgets.slint";
+import { Button, CheckBox } from "std-widgets.slint";
 
 export component MainWindow inherits Window {
+    preferred-height: 700px;
+    preferred-width: 1000px;
     background: #3960D5;
 
-    callback play-audio-file();
+    callback play-audio-file(bool);
 
     Image {
         source: @image-url("../pictures/licensed-image.jpeg");
@@ -14,9 +16,12 @@ export component MainWindow inherits Window {
     HorizontalLayout {
         Button {
             clicked => {
-                play-audio-file();
+                play-audio-file(reverse-check-box.checked);
             }
             text: "Послушать лютого негра";
+        }
+        reverse-check-box := CheckBox {
+            text: "Проиграть песню задом-наперед";
         }
     }
 }
