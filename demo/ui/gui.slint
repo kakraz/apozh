@@ -1,9 +1,22 @@
+import { Button } from "std-widgets.slint";
+
 export component MainWindow inherits Window {
     background: #3960D5;
+
+    callback play-audio-file();
 
     Image {
         source: @image-url("../pictures/licensed-image.jpeg");
         width: parent.width;
         height: parent.height;
+    }
+
+    HorizontalLayout {
+        Button {
+            clicked => {
+                play-audio-file();
+            }
+            text: "Послушать лютого негра";
+        }
     }
 }
